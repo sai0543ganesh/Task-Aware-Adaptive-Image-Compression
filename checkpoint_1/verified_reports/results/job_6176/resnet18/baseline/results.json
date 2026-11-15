@@ -1,0 +1,182 @@
+{
+  "task_architecture": "resnet18",
+  "arm": "baseline",
+  "output_directory": "<local path omitted>",
+  "training": {
+    "epochs": 50,
+    "images": 100000,
+    "logical_training_presentations": 5000000,
+    "selected_epoch": 50,
+    "best_validation_top1": 80.9,
+    "best_recorded_validation_top5": 94.9,
+    "seconds": 7819.233779573813,
+    "training_loop_seconds": 5867.134269415401,
+    "actual_forward_presentations": 5000000,
+    "history_path": "<local path omitted>",
+    "checkpoint_selection": "validation top1 only"
+  },
+  "test": {
+    "images": 5000,
+    "top1_percent": 80.84,
+    "top5_percent": 93.32,
+    "correct_top1": 4042,
+    "cross_entropy": 0.7769374010801315,
+    "seconds": 13.571503588929772
+  },
+  "source_cache": {
+    "images": 100000,
+    "source_payload_bytes": 6339126243,
+    "encoded_shared_RAM_bytes": 6339126243,
+    "decoded_source_cache": false,
+    "encoded_source_cache": false,
+    "all_source_file_hashes_verified": true,
+    "decoded_source_geometry_bytes": 65808550419,
+    "original_file_bytes_unchanged": true,
+    "seconds": 132.77391609642655,
+    "content_fingerprint": "1f492ebd9454b0daad60a9827f6ca0489f90d374eef8c47d9474cef8fb799ad6",
+    "repeated_image_file_reads_during_training": false,
+    "decode_cost": "source decoded from RAM for features and each branch materialization; all decode times charged",
+    "final_mapped_training_images_cached_as_decoded_pixels": true,
+    "shared_policy": {
+      "source": "unchanged encoded file bytes, read and hash-verified once per required stage",
+      "decoded_training_buffer": "one private anonymous contiguous uint8 RGB tensor, read-only fork sharing",
+      "source_header_threads": 16,
+      "materialization_threads": 4,
+      "materialization_wave": 256,
+      "release": "release encoded source before classifier fitting; release stage buffers before loading next stage"
+    },
+    "materialization_seconds": 73.90762078948319,
+    "decoded_shared_RAM_bytes": 65808550419,
+    "encoded_preparation_cache_used": true,
+    "training_buffer_policy": {
+      "source": "unchanged encoded file bytes, read and hash-verified once per required stage",
+      "decoded_training_buffer": "one private anonymous contiguous uint8 RGB tensor, read-only fork sharing",
+      "source_header_threads": 16,
+      "materialization_threads": 4,
+      "materialization_wave": 256,
+      "release": "release encoded source before classifier fitting; release stage buffers before loading next stage"
+    }
+  },
+  "complete_fresh_process_seconds": 8094.279540386982,
+  "logical_classifier_training_presentations": 5000000,
+  "GPU_peak_allocated_bytes": 1687266304,
+  "memory": {
+    "phases": {
+      "setup": {
+        "sampled_peak_process_tree_PSS_bytes": 1710055424,
+        "sampled_peak_summed_RSS_bytes": 1723428864,
+        "samples": 2,
+        "incomplete_samples": 0,
+        "peak_PSS_unix_time": 1794218173.8704536,
+        "GPU_peak_allocated_bytes": 436210688,
+        "GPU_peak_reserved_bytes": 520093696
+      },
+      "baseline_source_preparation": {
+        "sampled_peak_process_tree_PSS_bytes": 69348397056,
+        "sampled_peak_summed_RSS_bytes": 69361770496,
+        "samples": 27,
+        "incomplete_samples": 0,
+        "peak_PSS_unix_time": 1794218302.0889196,
+        "GPU_peak_allocated_bytes": 17039360,
+        "GPU_peak_reserved_bytes": 27262976
+      },
+      "baseline_evaluation_preparation": {
+        "sampled_peak_process_tree_PSS_bytes": 74487369728,
+        "sampled_peak_summed_RSS_bytes": 339085942784,
+        "samples": 7,
+        "incomplete_samples": 2,
+        "peak_PSS_unix_time": 1794218375.1802447,
+        "GPU_peak_allocated_bytes": 62004736,
+        "GPU_peak_reserved_bytes": 73400320
+      },
+      "baseline_training_setup": {
+        "sampled_peak_process_tree_PSS_bytes": 68414627840,
+        "sampled_peak_summed_RSS_bytes": 68428001280,
+        "samples": 2,
+        "incomplete_samples": 0,
+        "peak_PSS_unix_time": 1794218380.0140042,
+        "GPU_peak_allocated_bytes": 62004736,
+        "GPU_peak_reserved_bytes": 73400320
+      },
+      "baseline_training": {
+        "sampled_peak_process_tree_PSS_bytes": 69705750528,
+        "sampled_peak_summed_RSS_bytes": 338813448192,
+        "samples": 651,
+        "incomplete_samples": 0,
+        "peak_PSS_unix_time": 1794219495.1965535,
+        "GPU_peak_allocated_bytes": 1687266304,
+        "GPU_peak_reserved_bytes": 2357198848
+      },
+      "baseline_training_bookkeeping": {
+        "sampled_peak_process_tree_PSS_bytes": 69650755584,
+        "sampled_peak_summed_RSS_bytes": 338756968448,
+        "samples": 150,
+        "incomplete_samples": 0,
+        "peak_PSS_unix_time": 1794224934.8436031,
+        "GPU_peak_allocated_bytes": 191968768,
+        "GPU_peak_reserved_bytes": 2357198848
+      },
+      "baseline_validation": {
+        "sampled_peak_process_tree_PSS_bytes": 78662914048,
+        "sampled_peak_summed_RSS_bytes": 473491439616,
+        "samples": 42,
+        "incomplete_samples": 5,
+        "peak_PSS_unix_time": 1794222316.0911133,
+        "GPU_peak_allocated_bytes": 641597952,
+        "GPU_peak_reserved_bytes": 2357198848
+      },
+      "baseline_checkpoint_export": {
+        "sampled_peak_process_tree_PSS_bytes": 69634015232,
+        "sampled_peak_summed_RSS_bytes": 338741968896,
+        "samples": 42,
+        "incomplete_samples": 0,
+        "peak_PSS_unix_time": 1794226178.5899646,
+        "GPU_peak_allocated_bytes": 191968768,
+        "GPU_peak_reserved_bytes": 2357198848
+      },
+      "baseline_training_finalize": {
+        "sampled_peak_process_tree_PSS_bytes": 69634015232,
+        "sampled_peak_summed_RSS_bytes": 338740113408,
+        "samples": 3,
+        "incomplete_samples": 1,
+        "peak_PSS_unix_time": 1794226195.3705344,
+        "GPU_peak_allocated_bytes": 191968768,
+        "GPU_peak_reserved_bytes": 2357198848
+      },
+      "final_test": {
+        "sampled_peak_process_tree_PSS_bytes": 69310269440,
+        "sampled_peak_summed_RSS_bytes": 338639134720,
+        "samples": 3,
+        "incomplete_samples": 0,
+        "peak_PSS_unix_time": 1794226212.0189111,
+        "GPU_peak_allocated_bytes": 557203456,
+        "GPU_peak_reserved_bytes": 2357198848
+      },
+      "reporting": {
+        "sampled_peak_process_tree_PSS_bytes": 68985271296,
+        "sampled_peak_summed_RSS_bytes": 68998660096,
+        "samples": 1,
+        "incomplete_samples": 0,
+        "peak_PSS_unix_time": 1794226216.6454532
+      }
+    },
+    "interval_seconds": 5,
+    "main_peak_RSS_KiB": 73556180,
+    "note": "Phase PSS samples apportion shared pages; RSS is cumulative/summed and is not unique physicalRAM. Sampling can miss peaks."
+  },
+  "real_loop_preflight_seconds": 10.97863088734448,
+  "evaluation_cache_timings": [
+    {
+      "name": "validation",
+      "images": 1000,
+      "seconds": 24.51962752547115,
+      "implementation": "unchanged baseline5345 fixed_cache"
+    },
+    {
+      "name": "test",
+      "images": 5000,
+      "seconds": 43.08465457800776,
+      "implementation": "unchanged baseline5345 fixed_cache"
+    }
+  ]
+}

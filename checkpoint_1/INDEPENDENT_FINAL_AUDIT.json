@@ -1,0 +1,50 @@
+{
+  "resnet18": {
+    "baseline": {
+      "images": 5000,
+      "top1": 80.84,
+      "top5": 93.32000000000001,
+      "whole_peak_GiB": 73.26054763793945,
+      "seconds": 8094.279540386982
+    },
+    "proposed": {
+      "images": 5000,
+      "top1": 76.2,
+      "top5": 91.8,
+      "whole_peak_GiB": 19.91460418701172,
+      "seconds": 5580.518506306224
+    },
+    "MLP": {
+      "exact": 49.049217002237135,
+      "within1": 71.67225950782998,
+      "applied_unsafe": 3.942953020134228,
+      "resolved": 3576
+    },
+    "time_saved_percent": 31.056019520182986,
+    "train_RAM_saved_percent": 75.38308616717745
+  },
+  "densenet121": {
+    "baseline": {
+      "images": 5000,
+      "top1": 83.72,
+      "top5": 95.16,
+      "whole_peak_GiB": 74.22576427459717,
+      "seconds": 14542.160736393183
+    },
+    "proposed": {
+      "images": 5000,
+      "top1": 77.84,
+      "top5": 92.92,
+      "whole_peak_GiB": 20.823735237121582,
+      "seconds": 10839.274823946878
+    },
+    "MLP": {
+      "exact": 47.925368978000556,
+      "within1": 72.62600946811473,
+      "applied_unsafe": 5.56947925368978,
+      "resolved": 3591
+    },
+    "time_saved_percent": 25.46310675262632,
+    "train_RAM_saved_percent": 75.39669961515052
+  }
+}

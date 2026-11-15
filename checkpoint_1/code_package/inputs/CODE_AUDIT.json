@@ -1,0 +1,62 @@
+{
+  "training_function_AST_identical_after_removing_measurement_calls": true,
+  "shared_source_loader": true,
+  "shared_final_RGB_allocator": true,
+  "training_source_bytes_released": true,
+  "arms": [
+    "baseline",
+    "proposed"
+  ],
+  "task_architectures": [
+    "resnet18",
+    "densenet121"
+  ],
+  "independent_model_directories": true,
+  "batch": 64,
+  "training_workers": 4,
+  "evaluation_workers": 4,
+  "FP32": true,
+  "TF32": false,
+  "CPUs": 16,
+  "RAM_GiB": 77,
+  "node": "gpu-A100-01",
+  "preparation_workers": 16,
+  "materialization_workers": 4,
+  "teacher50_student50_baseline50": true,
+  "logical_presentations_each_route": 5000000,
+  "source_sha256": {
+    "augmented_policy.py": "6339d966f5fba6b2b6272785ace8f5347038ab0105559ff3af20090d927dec1b",
+    "baseline5345_reference.py": "931d72c83c2e37b39710934d05ecf7fc30544b54f56ae8657cd9b86788493634",
+    "bounded_source_cache.py": "1bacdcde7b41ed2c1c1ccc50af6b74bf8c548300ca920512d6a9c442109c0977",
+    "common_proposed_execution.py": "6cc01a54574c8d8ce23e1abf7764dd8e31ea0d2cccf28ffbbe99361f337aea8c",
+    "compression_lowram.py": "1aa5b38dc91c2993e4d2dd53a0bfe92d3ada202bd7b1dde9a4963f07be7d8444",
+    "cross_backbone_execution.py": "e2fc47d38b108c7f18876f1a27878c0a1c04318179ddc1bf24b3bcf28f169594",
+    "dense_heavy_paired_study.py": "08ccd15a55ac4e0bba64376e5c032009a256d6b5ebddb1046d19e2510ddfcf6c",
+    "final_phase_models_study.py": "531df2bbefc0533b7604c1e6b0cf04da445ea3791e1f82eb431a7b927d864543",
+    "final_worker.py": "25ddf910a1cac4ae2630e0e0c236b68dad7ab5aeeb6a0544b9a966b1e85b7141",
+    "head_adaptation.py": "85210a6ced5ade98a41a216478a469ac28bb54d6439f03abcf0d6cf418f92123",
+    "optimized_mtp_helpers.py": "55896087d40fbff0d625dab7c2baaf45a7e3c8cba3c40f2fc2b654ab208cabd9",
+    "optimized_paired_mtp.py": "bb1652e32de2d533f81f6381e082f762b9e1ed42d36a59037a3edd1729acd403",
+    "parallel_5327_mapping.py": "ead282a5a0d0800fca934f53a4e40825ba0cae3d6ce13e54d91cc6ee8e13eb80",
+    "resource_monitor.py": "3c042c622d125bad304016648158674a266cfdddf4196d5d7e9e7d0eff2ef415",
+    "saved5327_encoded_ram.py": "5e17d16b7b675af08e67d6af4458d9eda77f85e109198d9dd4950916d725857c",
+    "search_definition.py": "1b7bdf35073462cdc7df7741f7f59e475054e31514a7c9f4b69283d6453762e4",
+    "shared_data_policy.py": "e689d543f498e755fca23bba7622ea6ee3b6ccf5e3e3c345b51113abfcc093dc",
+    "shared_resnet_policy.py": "018c883a35ca7a4e1cf42f6bd53262388b02e6a85e24af1e287b591e2ba557ef",
+    "simple_grouped_core.py": "52d620138efa0daba709e5bfcfe21f5c1ae880cf8bc03d36838b2e73eea311e5",
+    "simple_grouped_pipeline.py": "43765d5b9fc1c5146b915b17e2c1393a495612c156515b9997b1e8ee8572c590",
+    "source_bytes_cache.py": "4ced0c760c31d62952d50e78264da3e8c73234e2111e57610bfc56b1570c74f3",
+    "stream_mapping.py": "f221071ae29804b97529588a8f7c61cb34c20fe26bc4e32382dca04a5f427e52",
+    "verify_data_policy.py": "e01715410ece42b173bf52618c039ac8bd0da1f1df5214b67b6755c01b98d299",
+    "verify_training_measurement.py": "6b477833a6e409f08b1440d2d3361a69a1eff851cf2c46ebd61351f6917497e5"
+  },
+  "input_archive_members": [
+    "sources.csv",
+    "validation.csv",
+    "test.csv",
+    "protocol.json",
+    "grid_split_policy.json",
+    "optimized_v28_features.csv",
+    "ASSET_MANIFEST.json"
+  ]
+}
