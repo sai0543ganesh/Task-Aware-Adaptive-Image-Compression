@@ -20,7 +20,7 @@ All five map the reduced image to a supported square size with bilinear resizing
 python prepare_imagenet_inputs.py /path/to/original/cross_backbone_inputs.tar.gz /path/to/data /path/to/imagenet_inputs
 ```
 
-The data directory contains the original `clean/` and `extracted/` subdirectories. A newly sampled subset would be a different experiment. The image files and per-image manifests are kept outside this code folder.
+The data directory contains the original `clean/` and `extracted/` subdirectories. The reported split uses 20,000 initial images, 80,000 continuation images, 1,000 validation images, and 5,000 test images. For exact reproduction, obtain the original images and input archive separately. The relocation helper changes file paths while preserving the split and recorded image hashes.
 
 **Food-101.** Download [ETH Zurich’s Food-101 archive](https://data.vision.ee.ethz.ch/cvl/food-101.tar.gz) separately. Prepare the manifests in a new input directory. This uses the fixed per-class validation selection, duplicate filtering, and the official test split from the reported run.
 
@@ -30,6 +30,8 @@ mkdir -p /path/to/food_inputs
 cp optimized_v28_features.csv /path/to/food_inputs/
 python prepare_food101.py /path/to/food_inputs
 ```
+
+The preparation script writes `cross_backbone_inputs.tar.gz` in that directory. The reported split contains 14,645 initial images, 58,572 continuation images, 2,525 validation images, and 25,250 official test images.
 
 ## Run on the cluster
 
@@ -42,4 +44,19 @@ python run_experiment.py --list
 python run_experiment.py imagenet-box-resnet18 --input-dir /path/to/imagenet_inputs --output-dir /path/to/results
 ```
 
-For Food-101, select `food101-bicubic-resnet18` and use the Food-101 input directory. The worker writes its protocol, predictions, stage timing, and measurements under `results/<variant>/job_<id>/<classifier>/proposed/`. Use a fresh output directory for a rerun. The code upload can be done from Windows Command Prompt; the training worker runs under Slurm.
+Select one identifier per invocation and pass the directory prepared for that dataset. For example, to run Food-101:
+
+```bash
+python run_experiment.py food101-bicubic-resnet18 --input-dir /path/to/food_inputs --output-dir /path/to/results
+```
+
+## Read the run outputs
+
+Use a fresh output directory for a rerun. Each worker writes to `<output-dir>/<variant>/job_<id>/<classifier>/proposed/`. The main artifacts are:
+
+- `protocol.json` for the recorded data, model, loader, and hardware settings.
+- `results.json` for complete elapsed time, test accuracy, stage timings, and memory measurements.
+- `mlp/MLP_EVALUATION.json` for the tier predictor's resolved-holdout metrics.
+- `test_predictions.npz` for the classifier predictions used to compute test accuracy.
+
+This launcher runs the proposed route. The [repository overview](../README.md#results-in-the-report) provides the comparison results from the report.
