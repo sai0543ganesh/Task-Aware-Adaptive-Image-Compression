@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+cross_backbone_inputs.tar.gz
+food-101.tar.gz
+food-101/
+food_manifest/
+results/
+*.pth
+*.pt
+*.npz
